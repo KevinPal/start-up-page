@@ -1,14 +1,11 @@
 import React, { Component } from 'react';
 
 class Clock extends Component {
-	componentDidMount(){
-		document.title = "Start Page";
-	}
-
 	render() {
+		var d = new Date();
 		return (
 			<div className="Clock">
-				{new Date().toLocaleTimeString()}
+				{d.getHours()} {d.getMinutes()}
 			</div>
 		);
 	}

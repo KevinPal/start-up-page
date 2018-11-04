@@ -1,15 +1,20 @@
 import React, { Component } from 'react';
 import './App.css';
-import './Clock.css';
-import Clock from './Clock.js';
+import './components/Clock.css';
+import './components/Greeting.css';
+import Clock from './components/Clock.js';
+import Greeting from './components/Greeting.js';
 
 class App extends Component {
+	componentDidMount(){
+		document.title = "New Tab";
+	}
 	render() {
 		return (
 			<div className="App">
 			<header className="App-header">
 				<Clock />
-				<h2>Good Afternoon, Zheng</h2>
+				<Greeting />
 			</header>
 			</div>
 		);
