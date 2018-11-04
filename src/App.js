@@ -4,10 +4,6 @@ import './Clock.css';
 import Clock from './Clock.js';
 
 class App extends Component {
-	componentDidMount(){
-		document.title = "Start Page";
-	}
-
 	render() {
 		return (
 			<div className="App">
