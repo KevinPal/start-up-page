@@ -8,31 +8,40 @@ import Clock from './components/Clock.js';
 import Greeting from './components/Greeting.js';
 
 class App extends Component {
-	overlay = false;
-	enterFunction(event) {
-		if (event.key === '?') {
-			this.props.overlay = !this.props.overlay;
-			console.log("this.props.overlay: " + this.props.overlay);
+	constructor(props) {
+		super(props);
+		this.state = {
+			show: false
 		}
 	}
-
 	componentDidMount() {
 		document.title = "New Tab";
-		document.addEventListener("keydown", this.enterFunction, false);
+		window.addEventListener('keydown', this.handleKey);
+	}
+
+	componentWillUnmount() {
+		window.myDiv.removeEventListener('keydown', this.handleKey);
+	}
+
+	handleKey = e => {
+		if (e.key === '?') {
+			console.log("QUESTION?!");
+			this.setState({
+				show: !this.state.show
+			});
+		}
 	}
 
 	render() {
-		if (!this.overlay) {
-			return (
-				<div className="App">
-					<header className="App-header">
+		return (
+			<div className="App">
+				<header className="App-header">
 					<Clock />
 					<Greeting />
-					<h2>this.overlay: {this.overlay.toString()}</h2>
-					</header>
-				</div>
-			)
-		}
+					{this.state.show ? 'showing':'not showing'}
+				</header>
+			</div>
+		)
 	}
 }
 
