@@ -4,9 +4,10 @@ import React, {
 import './App.css';
 import './components/Clock.css';
 import './components/Greeting.css';
+import './components/Information.css';
 import Clock from './components/Clock.js';
 import Greeting from './components/Greeting.js';
-
+import Information from './components/Information.js';
 class App extends Component {
 	constructor(props) {
 		super(props);
@@ -35,9 +36,9 @@ class App extends Component {
 		return (
 			<div className="App">
 				<header className="App-header">
-					<Clock />
-					<Greeting />
-					{this.state.show ? (<h1>Showing</h1>):''}
+					{this.state.show ? '':(<Clock />)}
+					{this.state.show ? '':(<Greeting />)}
+					{this.state.show ? (<Information />):''}
 				</header>
 			</div>
 		)
