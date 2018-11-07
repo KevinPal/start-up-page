@@ -25,7 +25,6 @@ class App extends Component {
 
 	handleKey = e => {
 		if (e.key === '?') {
-			console.log("QUESTION?!");
 			this.setState({
 				show: !this.state.show
 			});
@@ -38,7 +37,7 @@ class App extends Component {
 				<header className="App-header">
 					<Clock />
 					<Greeting />
-					{this.state.show ? 'showing':'not showing'}
+					{this.state.show ? (<h1>Showing</h1>):''}
 				</header>
 			</div>
 		)
