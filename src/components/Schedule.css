@@ -1,4 +1,4 @@
-.Information {
+.Schedule {
         border: 1px solid white;
 }
 
@@ -7,33 +7,34 @@
         color: #66d9ef;
 }
 
-.CRC {
+.Yellow {
         color: #f4bf75;
 }
 
-.MPW {
+.Cyan {
         color: #a1efe4;
 }
 
-.PL {
+.Red {
         color: #f92672;
 }
 
-.P {
+.Magenta {
         color: #ae81ff;
 }
 
-.PD {
+.Green {
         color: #a6e22e;
 }
 
-.DS {
+.White {
         color: #f8f8f2;
 }
 
-.DSL {
+.White2 {
         color: #f9f8f5;
 }
+
 
 th,
 td {

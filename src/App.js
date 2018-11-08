@@ -7,7 +7,7 @@ import './components/Greeting.css';
 import './components/Schedule.css';
 import Clock from './components/Clock.js';
 import Greeting from './components/Greeting.js';
-import Information from './components/Schedule.js';
+import Schedule from './components/Schedule.js';
 class App extends Component {
 	constructor(props) {
 		super(props);
@@ -38,7 +38,7 @@ class App extends Component {
 				<header className="App-header">
 					{this.state.show ? '':(<Clock />)}
 					{this.state.show ? '':(<Greeting />)}
-					{this.state.show ? (<Information />):''}
+					{this.state.show ? (<Schedule />):''}
 				</header>
 			</div>
 		)
