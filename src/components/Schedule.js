@@ -71,7 +71,7 @@ class Schedule extends Component {
 				</tr>
 				<tr>
 					<td className="Magenta"><big>4:30 PM</big><br/>Discrete Mathematics<br/><big>5:45 PM</big></td>
-					<td></td>
+					<td className="Red"><big>1:30 PM</big><br/>Discrete Mathematics Lab<br/><big>4:20 PM</big></td>
 					<td className="Magenta"><big>4:30 PM</big><br/>Discrete Mathematics<br/><big>5:45 PM</big></td>
 					<td></td>
 					<td className="Green"><big>2:30 PM</big><br/>Introduction To Philisophy Discussion<br/><big>3:20 PM</big></td>
