@@ -2,6 +2,39 @@
         border: 1px solid white;
 }
 
+.Day {
+        font-size: 2em;
+        color: #66d9ef;
+}
+
+.CRC {
+        color: #f4bf75;
+}
+
+.MPW {
+        color: #a1efe4;
+}
+
+.PL {
+        color: #f92672;
+}
+
+.P {
+        color: #ae81ff;
+}
+
+.PD {
+        color: #a6e22e;
+}
+
+.DS {
+        color: #f8f8f2;
+}
+
+.DSL {
+        color: #f9f8f5;
+}
+
 th,
 td {
         padding: 1em;
