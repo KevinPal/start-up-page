@@ -1,5 +1,8 @@
 .Information {
-        text-align: center;
-        font-size: 1em;
-        font-family: "Noto Mono for Powerline";
+        border: 1px solid white;
+}
+
+th,
+td {
+        padding: 1em;
 }
