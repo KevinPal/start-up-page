@@ -4,10 +4,10 @@ import React, {
 import './App.css';
 import './components/Clock.css';
 import './components/Greeting.css';
-import './components/Information.css';
+import './components/Schedule.css';
 import Clock from './components/Clock.js';
 import Greeting from './components/Greeting.js';
-import Information from './components/Information.js';
+import Information from './components/Schedule.js';
 class App extends Component {
 	constructor(props) {
 		super(props);
