@@ -1,40 +1,41 @@
-.Schedule {
-        border: 1px solid white;
+.Table-body {
+        font-size: 8px;
 }
 
 .Day {
-        font-size: 2em;
+        font-size: 1.6em;
         color: #66d9ef;
 }
 
 .Yellow {
+        font-size: 0.8em;
         color: #f4bf75;
 }
 
 .Cyan {
+        font-size: 0.8em;
         color: #a1efe4;
 }
 
 .Red {
+        font-size: 0.8em;
         color: #f92672;
 }
 
 .Magenta {
+        font-size: 0.8em;
         color: #ae81ff;
 }
 
 .Green {
+        font-size: 0.8em;
         color: #a6e22e;
 }
 
 .White {
+        font-size: 0.8em;
         color: #f8f8f2;
 }
-
-.White2 {
-        color: #f9f8f5;
-}
-
 
 th,
 td {
