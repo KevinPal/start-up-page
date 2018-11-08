@@ -16,28 +16,22 @@ class Information extends Component {
 			</thead>
 			<tbody>
 				<tr>
-					<td className="CRC">9:30 AM College Reading and Composition 11:20 AM</td>
-					<td className="MPW">9:30 AM Measuring our Physical World 11:20 AM</td>
-					<td className="CRC">9:30 AM College Reading and Composition 11:20 AM</td>
-					<td className="MPW">9:30 AM Measuring our Physical World 11:20 AM</td>
+					<td className="CRC"><big>9:30 AM</big><br/>College Reading and Composition<br/><big>11:20 AM</big></td>
+					<td className="MPW"><big>9:30 AM</big><br/>Measuring our Physical World<br/><big>11:20 AM</big></td>
+					<td className="CRC"><big>9:30 AM</big><br/>College Reading and Composition<br/><big>11:20 AM</big></td>
+					<td className="MPW"><big>9:30 AM</big><br/>Measuring our Physical World<br/><big>11:20 AM</big></td>
+					<td className="DSL"><big>10:30 AM</big><br/>Data Structures: Lab<br/><big>1:20 PM</big></td>
 				</tr>
 				<tr>
-				<td> </td>
-				<td> </td>
-				<td> </td>
-				<td> </td>
-					<td className="DSL">10:30 AM Data Structures: Lab 1:20 PM</td>
+					<td className="PL"><big>1:30 PM</big><br/>Physics II: Lab<br/><big>3:20 PM</big></td>
+					<td className="P"><big>1:30 PM</big><br/>Physics II <br/><big>2:45 PM</big></td>
+					<td className="PD"><big>1:30 PM</big><br/>Physics II: Disc<br/><big>3:20 PM</big></td>
+					<td className="P"><big>1:30 PM</big><br/>Physics II <br/><big>2:45 PM</big></td>
 				</tr>
 				<tr>
-					<td className="PL">1:30 PM Physics II: Lab 3:20 PM</td>
-					<td className="P">1:30 PM Physics II 2:45 PM</td>
-					<td className="PD">1:30 PM Physics II: Disc 3:20 PM</td>
-					<td className="P">1:30 PM Physics II 2:45 PM</td>
-				</tr>
-				<tr>
-					<td className="DS">4:30 PM Data Structures 5:45 PM</td>
+					<td className="DS"><big>4:30 PM</big><br/>Data Structures<br/><big>5:45 PM</big></td>
 					<td> </td>
-					<td className="DS">4:30 PM Data Structures 5:45 PM</td>
+					<td className="DS"><big>4:30 PM</big><br/>Data Structures<br/><big>5:45 PM</big></td>
 				</tr>
 			</tbody>
 		</table>
