@@ -7,16 +7,23 @@ class Schedule extends Component {
 		return season + 4 * year;
 	}
 	render() {
+		const todayStyle = {
+			color: '#f92672',
+		};
+		const notTodayStyle = {
+			color: '#66d9ef',
+		};
+		var day = new Date().getDay();
 		this.sch = [];
 		this.sch[this.key(2, 2018)] = (
 			<table className="Table">
 			<thead className="Table-head">
 				<tr>
-					<th className="Day">Monday</th>
-					<th className="Day">Tuesday</th>
-					<th className="Day">Wednesday</th>
-					<th className="Day">Thursday</th>
-					<th className="Day">Friday</th>
+					<th className="Day" style={day === 1 ? todayStyle:notTodayStyle}>Monday</th>
+					<th className="Day" style={day === 2 ? todayStyle:notTodayStyle}>Tuesday</th>
+					<th className="Day" style={day === 3 ? todayStyle:notTodayStyle}>Wednesday</th>
+					<th className="Day" style={day === 4 ? todayStyle:notTodayStyle}>Thursday</th>
+					<th className="Day" style={day === 5 ? todayStyle:notTodayStyle}>Friday</th>
 				</tr>
 			</thead>
 			<tbody>
@@ -46,11 +53,11 @@ class Schedule extends Component {
 			<table className="Table">
 			<thead>
 				<tr>
-					<th className="Day">Monday</th>
-					<th className="Day">Tuesday</th>
-					<th className="Day">Wednesday</th>
-					<th className="Day">Thursday</th>
-					<th className="Day">Friday</th>
+					<th className="Monday">Monday</th>
+					<th className="Tuesday">Tuesday</th>
+					<th className="Wednesday">Wednesday</th>
+					<th className="Thursday">Thursday</th>
+					<th className="Friday">Friday</th>
 				</tr>
 			</thead>
 			<tbody>
@@ -93,15 +100,15 @@ class Schedule extends Component {
 		var year = new Date().getFullYear();
 		var season = -1;
 		var month = new Date().getMonth();
-		var day = new Date().getDate();
+		var date = new Date().getDate();
 		if (month === 11) {
-			if (day > 18) {
+			if (date > 18) {
 				season = 3;
 			}
 		} else if (month > 7) {
 			season = 2;
 		} else if (month === 7) {
-			if (day >= 15) {
+			if (date >= 15) {
 				season = 2;
 			} else {
 				season = 1;
@@ -109,7 +116,7 @@ class Schedule extends Component {
 		} else if (month > 4) {
 			season = 1;
 		} else if (month === 4) {
-			if (day >= 21) {
+			if (date >= 21) {
 				season = 1;
 			} else {
 				season = 0;
@@ -117,7 +124,7 @@ class Schedule extends Component {
 		} else if (month >= 0) {
 			season = 0;
 		} else if (month === 0) {
-			if (day > 15) {
+			if (date > 15) {
 				season = 0;
 			} else {
 				season = 3;
