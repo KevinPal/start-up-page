@@ -3,8 +3,13 @@ import React, {
 } from 'react';
 
 class Schedule extends Component {
-	fall = (
-		<table className="Table">
+	key(season, year) {
+		return season + 4 * year;
+	}
+	render() {
+		this.sch = [];
+		this.sch[this.key(2, 2018)] = (
+			<table className="Table">
 			<thead className="Table-head">
 				<tr>
 					<th className="Day">Monday</th>
@@ -14,7 +19,7 @@ class Schedule extends Component {
 					<th className="Day">Friday</th>
 				</tr>
 			</thead>
-			<tbody className="Table-body">
+			<tbody>
 				<tr>
 					<td className="Yellow"><big>9:30 AM</big><br/>College Reading and Composition<br/><big>11:20 AM</big></td>
 					<td className="Cyan"><big>9:30 AM</big><br/>Measuring our Physical World<br/><big>11:20 AM</big></td>
@@ -35,10 +40,10 @@ class Schedule extends Component {
 				</tr>
 			</tbody>
 		</table>
-	);
+		);
 
-	spring = (
-		<table className="Table">
+		this.sch[this.key(0, 2019)] = (
+			<table className="Table">
 			<thead>
 				<tr>
 					<th className="Day">Monday</th>
@@ -83,10 +88,45 @@ class Schedule extends Component {
 				</tr>
 			</tbody>
 		</table>
-	);
+		);
 
-	render() {
-		return this.spring;
+		var year = new Date().getFullYear();
+		var season = -1;
+		var month = new Date().getMonth();
+		var day = new Date().getDate();
+		if (month === 11) {
+			if (day > 18) {
+				season = 3;
+			}
+		} else if (month > 7) {
+			season = 2;
+		} else if (month === 7) {
+			if (day >= 15) {
+				season = 2;
+			} else {
+				season = 1;
+			}
+		} else if (month > 4) {
+			season = 1;
+		} else if (month === 4) {
+			if (day >= 21) {
+				season = 1;
+			} else {
+				season = 0;
+			}
+		} else if (month >= 0) {
+			season = 0;
+		} else if (month === 0) {
+			if (day > 15) {
+				season = 0;
+			} else {
+				season = 3;
+			}
+		} else {
+			season = 3;
+		}
+		//return this.spring;
+		return this.sch[this.key(season, year)];
 	}
 }
 
