@@ -53,11 +53,11 @@ class Schedule extends Component {
 			<table className="Table">
 			<thead>
 				<tr>
-					<th className="Monday">Monday</th>
-					<th className="Tuesday">Tuesday</th>
-					<th className="Wednesday">Wednesday</th>
-					<th className="Thursday">Thursday</th>
-					<th className="Friday">Friday</th>
+					<th className="Day" style={day === 1 ? todayStyle:notTodayStyle}>Monday</th>
+					<th className="Day" style={day === 2 ? todayStyle:notTodayStyle}>Tuesday</th>
+					<th className="Day" style={day === 3 ? todayStyle:notTodayStyle}>Wednesday</th>
+					<th className="Day" style={day === 4 ? todayStyle:notTodayStyle}>Thursday</th>
+					<th className="Day" style={day === 5 ? todayStyle:notTodayStyle}>Friday</th>
 				</tr>
 			</thead>
 			<tbody>
