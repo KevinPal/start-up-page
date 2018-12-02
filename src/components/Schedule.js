@@ -104,6 +104,8 @@ class Schedule extends Component {
 		if (month === 11) {
 			if (date > 18) {
 				season = 3;
+			} else {
+				season = 2;
 			}
 		} else if (month > 7) {
 			season = 2;
