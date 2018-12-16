@@ -40,12 +40,10 @@ class App extends Component {
 		var d = new Date().getDay();
 		return (
 			<div className="App">
-				<header className="App-header">
 					{this.state.showSchedule || this.state.showDaySchedule ? '':<Clock />}
 					{this.state.showSchedule || this.state.showDaySchedule ? '':<Greeting />}
-					{!this.state.showSchedule  && this.state.showDaySchedule ? <table><tr><td><Clock/><Greeting/></td><td><Schedule day={d}/></td></tr></table>:''}
+					{!this.state.showSchedule  && this.state.showDaySchedule ? <div className="Row"><div className="Column"><Clock/><Greeting/></div><div className="Column"><Schedule day={d}/></div></div>:''}
 					{this.state.showSchedule ? (<Schedule/>):''}
-				</header>
 			</div>
 		)
 	}

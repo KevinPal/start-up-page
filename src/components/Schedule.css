@@ -40,6 +40,7 @@
         white-space: nowrap;
         overflow: hidden;
         table-layout: fixed;
+        text-align: center;
 }
 
 .DaySchedule .Classroom {
@@ -57,4 +58,5 @@
 .FullSchedule td {
         margin: 0 0;
         vertical-align: top;
+        display: center;
 }
