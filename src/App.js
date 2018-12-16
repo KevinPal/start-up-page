@@ -38,7 +38,6 @@ class App extends Component {
 
 	render() {
 		var d = new Date().getDay();
-		d = 1;
 		return (
 			<div className="App">
 				<header className="App-header">
