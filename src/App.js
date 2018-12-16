@@ -27,18 +27,25 @@ class App extends Component {
 	handleKey = e => {
 		if (e.key === '?') {
 			this.setState({
-				show: !this.state.show
+				showSchedule: !this.state.showSchedule
+			});
+		} else if (e.key === '/') {
+			this.setState({
+				showDaySchedule: !this.state.showDaySchedule
 			});
 		}
 	}
 
 	render() {
+		var d = new Date().getDay();
+		d = 1;
 		return (
 			<div className="App">
 				<header className="App-header">
-					{this.state.show ? '':(<Clock />)}
-					{this.state.show ? '':(<Greeting />)}
-					{this.state.show ? (<Schedule />):''}
+					{this.state.showSchedule || this.state.showDaySchedule ? '':<Clock />}
+					{this.state.showSchedule || this.state.showDaySchedule ? '':<Greeting />}
+					{!this.state.showSchedule  && this.state.showDaySchedule ? <table><tr><td><Clock/><Greeting/></td><td><Schedule day={d}/></td></tr></table>:''}
+					{this.state.showSchedule ? (<Schedule/>):''}
 				</header>
 			</div>
 		)
