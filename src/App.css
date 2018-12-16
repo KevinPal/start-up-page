@@ -26,3 +26,18 @@
         font-size: calc(10px + 2vmin);
         color: white;
 }
+
+::-webkit-scrollbar {
+        width: 7px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+        background: #272822;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+        background: #66d9ef;
+        border-radius: 3.5px;
+}
