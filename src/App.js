@@ -38,7 +38,6 @@ class App extends Component {
 
 	render() {
 		var d = new Date().getDay();
-		d = 1; //SHOWING MONDAY FOR DEBUGGING
 		return (
 			<div className="App">
 					{this.state.showSchedule ? '':<div className="ClockGreeting"><Clock/><Greeting/></div>}
