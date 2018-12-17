@@ -41,7 +41,7 @@ class App extends Component {
 		return (
 			<div className="App">
 					{this.state.showSchedule ? '':<div className="ClockGreeting"><Clock/><Greeting/></div>}
-					{!this.state.showSchedule  && this.state.showDaySchedule ? <div className="Column"><Schedule day={d}/></div>: ''} 
+					{!this.state.showSchedule  && this.state.showDaySchedule ? <div className="Column"><Schedule day={d}/><Schedule day={(d == 7) ? 0: d + 1}/></div>: ''} 
 					{this.state.showSchedule ? (<Schedule/>) : ''} 
 			</div>
 		);
