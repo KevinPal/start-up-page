@@ -47,14 +47,3 @@
         padding: 100px;
         vertical-align: center;
 }
-
-.Row {
-        display: flex;
-        flex-direction: row;
-}
-
-.Row:after {
-        content: "";
-        display: table;
-        clear: both;
-}
