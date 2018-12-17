@@ -33,33 +33,40 @@
         color: #f8f8f2;
 }
 
-.DaySchedule td {
-        padding: 0.75em;
-        margin: 0 0;
-        vertical-align: center;
-        white-space: nowrap;
-        overflow: hidden;
-        table-layout: fixed;
-        text-align: center;
-        width: 50%;
+.DaySchedule {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
         margin-left: auto;
         margin-right: auto;
+}
+
+.DaySchedule div {
+        padding: 0.75em;
+        text-align: center;
+        width: 100%;
+        white-space: nowrap;
+        overflow: hidden;
 }
 
 .DaySchedule .Classroom {
         display: none;
 }
 
-.DaySchedule td:hover .Classroom {
+.DaySchedule div:hover .Classroom {
         display: inline;
 }
 
-.DaySchedule td:hover .Course {
+.DaySchedule div:hover .Course {
         display: none;
 }
 
-.FullSchedule td {
+.FullSchedule {
         margin: 0 0;
-        vertical-align: top;
-        display: center;
+        display: grid;
+        grid-template-columns: 20% 20% 20% 15% 25%;
+        grid-template-rows: auto;
+        width: 90%
 }
