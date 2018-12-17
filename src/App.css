@@ -2,10 +2,26 @@
         background-color: #272822;
         min-height: 100vh;
         display: flex;
-        flex-direction: column;
+        flex-direction: row;
         justify-content: center;
+        align-items: center;
         font-size: calc(10px + 2vmin);
         color: white;
+}
+
+.App:after {
+        content: "";
+        display: table;
+        clear: both;
+}
+
+.ClockGreeting {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 50%;
+        margin-left: auto;
+        margin-right: auto;
 }
 
 ::-webkit-scrollbar {
@@ -29,10 +45,12 @@
         margin-right: auto;
         width: 50%;
         padding: 100px;
+        vertical-align: center;
 }
 
 .Row {
         display: flex;
+        flex-direction: row;
 }
 
 .Row:after {

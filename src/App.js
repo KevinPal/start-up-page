@@ -37,16 +37,18 @@ class App extends Component {
 	}
 
 	render() {
-		var d = new Date().getDay();
-		return (
-			<div className="App">
-					{this.state.showSchedule || this.state.showDaySchedule ? '':<Clock />}
-					{this.state.showSchedule || this.state.showDaySchedule ? '':<Greeting />}
-					{!this.state.showSchedule  && this.state.showDaySchedule ? <div className="Row"><div className="Column"><Clock/><Greeting/></div><div className="Column"><Schedule day={d}/></div></div>:''}
-					{this.state.showSchedule ? (<Schedule/>):''}
-			</div>
-		)
-	}
+			var d = new Date().getDay();
+			d = 1; //SHOWING MONDAY FOR DEBUGGING
+			return (
+					<div className="App">
+					{this.state.showSchedule ? '':<div className="ClockGreeting"><Clock/><Greeting/></div>}
+					{!this.state.showSchedule  && this.state.showDaySchedule ? <div className="Column"><Schedule day={d}/></div>: ''
+			} {
+				this.state.showSchedule ? (<Schedule/>) : ''
+			} <
+			/div>
+	)
+}
 }
 
 export default App;
