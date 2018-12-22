@@ -97,7 +97,11 @@ class Schedule extends Component {
 		if (this.props.day === undefined) {
 			return this.sch;
 		} else {
-			return this.daySchedule[this.props.day];
+			if(this.props.day <= 5 && this.props.day >=1){
+				return this.daySchedule[this.props.day];
+			} else {
+				return (<div className="Red">ERROR</div>);
+			}
 		}
 	}
 }
