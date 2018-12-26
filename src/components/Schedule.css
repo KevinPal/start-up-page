@@ -1,36 +1,43 @@
 .Day {
-        font-size: 1.6em;
-        color: #66d9ef
+        font-size: 1.4em;
+        color: #66d9ef;
+        font-family: "Open Sans";
 }
 
 .Yellow {
-        font-size: 0.8em;
+        font-size: 0.7em;
         color: #f4bf75;
+        font-family: "Open Sans";
 }
 
 .Cyan {
-        font-size: 0.8em;
+        font-size: 0.7em;
         color: #a1efe4;
+        font-family: "Open Sans";
 }
 
 .Red {
-        font-size: 0.8em;
+        font-size: 0.7em;
         color: #f92672;
+        font-family: "Open Sans";
 }
 
 .Magenta {
-        font-size: 0.8em;
+        font-size: 0.7em;
         color: #ae81ff;
+        font-family: "Open Sans";
 }
 
 .Green {
-        font-size: 0.8em;
+        font-size: 0.7em;
         color: #a6e22e;
+        font-family: "Open Sans";
 }
 
 .White {
-        font-size: 0.8em;
+        font-size: 0.7em;
         color: #f8f8f2;
+        font-family: "Open Sans";
 }
 
 .DaySchedule {
