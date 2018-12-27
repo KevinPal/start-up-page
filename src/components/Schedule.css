@@ -1,0 +1,79 @@
+.Day {
+        font-size: 1.4em;
+        color: #66d9ef;
+        font-family: "Open Sans";
+}
+
+.Yellow {
+        font-size: 0.7em;
+        color: #f4bf75;
+        font-family: "Open Sans";
+}
+
+.Cyan {
+        font-size: 0.7em;
+        color: #a1efe4;
+        font-family: "Open Sans";
+}
+
+.Red {
+        font-size: 0.7em;
+        color: #f92672;
+        font-family: "Open Sans";
+}
+
+.Magenta {
+        font-size: 0.7em;
+        color: #ae81ff;
+        font-family: "Open Sans";
+}
+
+.Green {
+        font-size: 0.7em;
+        color: #a6e22e;
+        font-family: "Open Sans";
+}
+
+.White {
+        font-size: 0.7em;
+        color: #f8f8f2;
+        font-family: "Open Sans";
+}
+
+.DaySchedule {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        margin-left: auto;
+        margin-right: auto;
+}
+
+.DaySchedule div {
+        padding: 0.75em;
+        text-align: center;
+        width: 100%;
+        white-space: nowrap;
+        overflow: hidden;
+}
+
+.DaySchedule .Classroom {
+        display: none;
+}
+
+.DaySchedule div:hover .Classroom {
+        display: inline;
+}
+
+.DaySchedule div:hover .Course {
+        display: none;
+}
+
+.FullSchedule {
+        margin: 0 0;
+        display: grid;
+        grid-template-columns: 20% 20% 20% 15% 25%;
+        grid-template-rows: auto;
+        width: 90%
+}

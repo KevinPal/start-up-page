@@ -1,0 +1,62 @@
+.App {
+        background-color: #272822;
+        min-height: 100vh;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        font-size: calc(10px + 2vmin);
+        color: white;
+}
+
+.App:after {
+        content: "";
+        display: table;
+        clear: both;
+}
+
+.ClockGreeting {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin-left: auto;
+        margin-right: auto;
+        font-family: 'Open Sans';
+}
+
+::-webkit-scrollbar {
+        width: 7px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+        background: #272822;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+        background: #66d9ef;
+        border-radius: 3.5px;
+}
+
+.Column {
+        float: left;
+        margin-left: auto;
+        margin-right: auto;
+        width: 27%;
+        vertical-align: center;
+        display: flex;
+        flex-direction: row;
+}
+
+@font-face {
+        font-family: 'Computer Modern';
+        font-style: normal;
+        src: url('/fonts/cmunrm.ttf');
+}
+
+@font-face {
+        font-family: 'Open Sans';
+        font-style: normal;
+        src: url('/fonts/OpenSans-Light.ttf');
+}

@@ -1,0 +1,18 @@
+{
+  "chrome_url_overrides": {
+    "newtab": "index.html"
+  },
+  "manifest_version": 2,
+
+  "name": "Start Page",
+  "description": "Kevin Zheng's Start Page",
+  "version": "0.0.1",
+
+  "browser_action": {
+  },
+  "icons": {
+  },
+  "permissions": [ 
+  ],
+  "content_security_policy": "script-src 'self' 'sha256-GgRxrVOKNdB4LrRsVPDSbzvfdV4UqglmviH9GoBJ5jk='; object-src 'self'"
+}
