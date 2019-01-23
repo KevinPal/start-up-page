@@ -56,7 +56,7 @@ class Schedule extends Component {
 			<div className="DaySchedule">
 				<div className="Day" style={day === 3 ? todayStyle:notTodayStyle}>Wednesday</div>
 				<div className="Yellow"><big>8:30 AM</big><br/><span className="Course">Intro to East Asia</span><span className="Classroom">COB 116</span><br/><big>9:20 AM</big></div>
-				<div className="Yellow"><big>10:30 AM</big><br/><span className="Course">Intro to East Asia Discussion</span><span className="Classroom">COB 113</span><br/><big>11:20 AM</big></div>
+				<div className="Yellow"><big>10:30 AM</big><br/><span className="Course">Intro to East Asia Discussion</span><span className="Classroom">GP 130</span><br/><big>11:20 AM</big></div>
 				<div className="Red"><big>12:30 PM</big><br/><span className="Course">Biology Today</span><span className="Classroom">COB2 110</span><br/><big>1:20 PM</big></div>
 				<div className="Cyan"><big>3:30 PM</big><br/><span className="Course">Special Relativity</span><span className="Classroom">COB 267</span><br/><big>4:45 PM</big></div>
 				<div className="Magenta"><big>4:30 PM</big><br/><span className="Course">Discrete Mathematics</span><span className="Classroom">COB 105</span><br/><big>5:45 PM</big></div>
