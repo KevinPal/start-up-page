@@ -3,9 +3,29 @@ import React, {
 } from 'react';
 
 class Schedule extends Component {
-
-	getDaySchedule(i) {
-
+	constructor(props) {
+		super(props)
+		var c = []
+		var rawFile = new XMLHttpRequest();
+		rawFile.open("GET", "res/courses.csv", false);
+		rawFile.onreadystatechange = function () {
+			if(rawFile.readyState === 4) {
+				if(rawFile.status === 200 || rawFile.status === 0) {
+					var allText = rawFile.responseText;
+					var lines = allText.split("\n");
+					lines.pop();
+					for(var i = 0; i < lines.length; i++) {
+						var cells = lines[i].split(",");
+						c.push(cells)
+					}
+				}
+			}
+		}
+		rawFile.send(null);
+		console.log(c)
+		this.state = {
+			courses: c
+		}
 	}
 
 	render() {
@@ -16,6 +36,7 @@ class Schedule extends Component {
 			color: '#66d9ef',
 		};
 		var day = new Date().getDay();
+		var days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday']
 		this.daySchedule = [];
 		this.daySchedule[6] = (
 			<div className="DaySchedule">
@@ -29,62 +50,22 @@ class Schedule extends Component {
 				<div className="Red">Free</div>
 			</div>
 		);
-		this.daySchedule[1] = (
-			<div className="DaySchedule">
-				<div className="Day" style={day === 1 ? todayStyle:notTodayStyle}>Monday</div>
-				<div className="Yellow"><big>8:30 AM</big><br/><span className="Course">Intro to East Asia</span><span className="Classroom">COB 116</span><br/><big>9:20 AM</big></div>
-				<div ></div>
-				<div className="Red"><big>12:30 PM</big><br/><span className="Course">Biology Today</span><span className="Classroom">COB2 110</span><br/><big>1:20 PM</big></div>
-				<div className="Cyan"><big>3:30 PM</big><br/><span className="Course">Special Relativity</span><span className="Classroom">COB 267</span><br/><big>4:45 PM</big></div>
-				<div className="Magenta"><big>4:30 PM</big><br/><span className="Course">Discrete Mathematics</span><span className="Classroom">COB 105</span><br/><big>5:45 PM</big></div>
-				<div className="Green"><big>7:30 PM</big><br/><span className="Course">Introduction to Philosophy</span><span className="Classroom">COB 113</span><br/><big>8:45 PM</big></div>
-			</div>
-		);
+		var key = 0;
+		for (var i = 0; i < this.state.courses.length; i++){
+			var dc = []
+			for (var j = 0; j < this.state.courses[i].length; j+=5) {
+				dc.push(
+					<div className={this.state.courses[i][j + 1]} key={key++}><big>{this.state.courses[i][j]}</big><br/><span className="Course">{this.state.courses[i][j + 3]}</span><span className="Classroom">{this.state.courses[i][j + 2]}</span><br/><big>{this.state.courses[i][j + 4]}</big></div>
+				);
+			}
+			this.daySchedule[i + 1] = (
+				<div className="DaySchedule">
+					<div className="Day" style={day === (i + 1) ? todayStyle:notTodayStyle}>{days[i + 1]}</div>
+					{dc}
+				</div>
+			);
+		}
 
-		this.daySchedule[2] = (
-			<div className="DaySchedule">
-				<div className="Day" style={day === 2 ? todayStyle:notTodayStyle}>Tuesday</div>
-				<div className="Red"><big>8:30 AM</big><br/><span className="Course">Biology Today Discussion</span><span className="Classroom">COB 266</span><br/><big>10:20 AM</big></div>
-				<div ></div>
-				<div ></div>
-				<div ></div>
-				<div className="Magenta"><big>1:30 PM</big><br/><span className="Course">Discrete Mathematics Lab</span><span className="Classroom">SEB 138</span><br/><big>4:20 PM</big></div>
-			</div>
-		);
-
-		this.daySchedule[3] = (
-			<div className="DaySchedule">
-				<div className="Day" style={day === 3 ? todayStyle:notTodayStyle}>Wednesday</div>
-				<div className="Yellow"><big>8:30 AM</big><br/><span className="Course">Intro to East Asia</span><span className="Classroom">COB 116</span><br/><big>9:20 AM</big></div>
-				<div className="Yellow"><big>10:30 AM</big><br/><span className="Course">Intro to East Asia Discussion</span><span className="Classroom">GP 130</span><br/><big>11:20 AM</big></div>
-				<div className="Red"><big>12:30 PM</big><br/><span className="Course">Biology Today</span><span className="Classroom">COB2 110</span><br/><big>1:20 PM</big></div>
-				<div className="Cyan"><big>3:30 PM</big><br/><span className="Course">Special Relativity</span><span className="Classroom">COB 267</span><br/><big>4:45 PM</big></div>
-				<div className="Magenta"><big>4:30 PM</big><br/><span className="Course">Discrete Mathematics</span><span className="Classroom">COB 105</span><br/><big>5:45 PM</big></div>
-				<div className="Green"><big>7:30 PM</big><br/><span className="Course">Introduction to Philosophy</span><span className="Classroom">COB 113</span><br/><big>8:45 PM</big></div>
-			</div>
-		);
-		this.daySchedule[4] = (
-			<div className="DaySchedule">
-				<div className="Day" style={day === 4 ? todayStyle:notTodayStyle}>Thursday</div>
-				<div ></div>
-				<div ></div>
-				<div ></div>
-				<div ></div>
-				<div ></div>
-				<div ></div>
-			</div>
-		);
-		this.daySchedule[5] = (
-			<div className="DaySchedule">
-				<div className="Day" style={day === 5 ? todayStyle:notTodayStyle}>Friday</div>
-				<div className = "Yellow" > <big>8:30 AM</big><br/><span className="Course">Intro to East Asia</span><span className="Classroom"> COB 116 </span><br/> <big>9:20 AM</big></div>
-				<div></div>
-				<div className = "Red"><big>12:30 PM</big><br/><span className="Course">Biology Today</span><span className="Classroom">COB2 110</span><br/><big>1:20 PM</big></div>
-				<div className = "Cyan"><big>1:30 PM</big><br/><span className="Course">Special Relativity Discussion</span><span className="Classroom">COB 267</span><br/><big>2:20 PM</big></div>
-				<div className = "Green" > <big>2:30 PM</big><br/><span className="Course">Introduction to Philosophy Discussion</span><span className="Classroom">COB 127</span><br/><big>3:20 PM</big></div>
-				<div></div>
-			</div>
-		);
 		this.sch = (
 			<div className="FullSchedule">
 				<div>{this.daySchedule[1]}</div>
