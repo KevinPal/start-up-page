@@ -3,20 +3,51 @@ import React, {
 } from 'react';
 
 class Greeting extends Component {
-	// this will only render once and won't update for the morning or afternoon
-	// just don't keep your tab open between morning and afternoon
+
+	constructor(props) {
+		super(props);
+
+		fetch("res/settings.json").then( (resp) => resp.json()).then( (jsonResp) => this.setState({name: jsonResp.name}));
+
+		this.state = {
+			date: new Date(),
+			name: ""
+		}
+	}
+
+	componentDidMount() {
+		this.timerID = setInterval(
+			() => this.setState =({
+				date: new Date()
+			}),
+			1000
+		);
+	}
+
 	render() {
-		var d = new Date();
-		if (d.getHours() < 12) {
+		var d = this.state.date;
+		if (7 < d.getHours() && d.getHours() < 11) {
 			return (
 				<div className="Greeting">
-					Good Morning, Zheng
+					Good Morning, {this.state.name}
 				</div>
 			)
+		} else if(11 <= d.getHours() && d.getHours() < 17) {
+			return (
+				<div className="Greeting">
+					Good Afternoon, {this.state.name}
+				</div>
+			);
+		} else if(17 <= d.getHours() && d.getHours() < 21) {
+			return (
+				<div className="Greeting">
+					Good Evening, {this.state.name}
+				</div>
+			);
 		} else {
 			return (
 				<div className="Greeting">
-					Good Afternoon, Zheng
+					Good Night, {this.state.name}
 				</div>
 			);
 		}

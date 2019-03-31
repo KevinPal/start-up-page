@@ -24,6 +24,6 @@ yarn-error.log*
 
 start-up-page.pem
 
-# My schedule
+# My schedule & settings.json
 
 public/res/*
