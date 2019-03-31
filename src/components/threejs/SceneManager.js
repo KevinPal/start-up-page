@@ -55,7 +55,7 @@ export default canvas => {
 
     function createSceneSubjects(scene) {
         const sceneSubjects = [
-            new GeneralLights(scene),
+            //new GeneralLights(scene),
             new SceneSubject(scene)
         ];
 
@@ -74,8 +74,8 @@ export default canvas => {
     }
 
     function updateCameraPositionRelativeToMouse() {
-        camera.position.x += (  (mousePosition.x * 0.01) - camera.position.x ) * 0.01;
-        camera.position.y += ( -(mousePosition.y * 0.01) - camera.position.y ) * 0.01;
+        camera.position.x += (  (mousePosition.x * 0.01) - camera.position.x ) * 0.02;
+        camera.position.y += ( -(mousePosition.y * 0.01) - camera.position.y ) * 0.02;
         camera.lookAt(origin);
     }
 
