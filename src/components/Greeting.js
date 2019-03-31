@@ -4,22 +4,22 @@ import React, {
 
 class Greeting extends Component {
 
-    constructor(props) {
-        super(props);
+	constructor(props) {
+		super(props);
 
-        fetch("res/settings.json").then( (resp) => resp.json()).then( (jsonResp) => this.setState({name: jsonResp.name}));
+		fetch("res/settings.json").then( (resp) => resp.json()).then( (jsonResp) => this.setState({name: jsonResp.name}));
 
-        this.state = {
-            date: new Date(),
-            name: ""
-        }
-    }
+		this.state = {
+			date: new Date(),
+			name: ""
+		}
+	}
 
 	componentDidMount() {
 		this.timerID = setInterval(
 			() => this.setState =({
-            date: new Date()
-            }),
+				date: new Date()
+			}),
 			1000
 		);
 	}
@@ -44,19 +44,13 @@ class Greeting extends Component {
 					Good Evening, {this.state.name}
 				</div>
 			);
-		} else if(21 <= d.getHours() && d.getHours() < 4) {
+		} else {
 			return (
 				<div className="Greeting">
 					Good Night, {this.state.name}
 				</div>
 			);
-		} else {
-			return (
-				<div className="Greeting">
-					{this.state.name}
-				</div>
-			);
-        }
+		}
 	}
 }
 
