@@ -40,12 +40,14 @@ class App extends Component {
 		var d = new Date().getDay();
 		return (
 			<div className="App">
-                <ThreeContainer style={{position: "absolute", zIndex: "1", width:"100%"}} />
-                <div style={{position: "absolute", zIndex: "2"}}>
-                    {this.state.showSchedule ? '':<div className="ClockGreeting"><Clock/><Greeting/></div>}
-                    {!this.state.showSchedule  && this.state.showDaySchedule && d >= 1 && d <= 5? <div className="Column"><Schedule day={d}/><Schedule day={(d === 7) ? 0: d + 1}/></div>: ''}
-                    {this.state.showSchedule ? (<Schedule/>) : ''}
-                </div>
+				<ThreeContainer style={{position: "absolute", zIndex: "1", width:"100%"}} />
+				<div style={{position: "absolute", zIndex: "2"}}>
+					<div className="Content">
+						{this.state.showSchedule ? '':<div className="ClockGreeting"><Clock/><Greeting/></div>}
+						{!this.state.showSchedule  && this.state.showDaySchedule && d >= 1 && d <= 5? <div className="Column"><Schedule day={d}/><Schedule day={(d === 7) ? 0: d + 1}/></div>: ''}
+						{this.state.showSchedule ? (<Schedule/>) : ''}
+					</div>
+				</div>
 			</div>
 		);
 	}
